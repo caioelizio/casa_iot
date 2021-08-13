@@ -1,5 +1,6 @@
 var watch = (() => {
-  const tempInput   = document.querySelector("#tempInput");
+//  const tempInput   = document.querySelector("#tempInput");
+  const tempInput = document.querySelector("#SensorDHT11");
 
   const create = (temp) => {
     const data    = {
