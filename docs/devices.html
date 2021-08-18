@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="version" content="#versao#" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.9, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap4-toggle-->
+    <link
+      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+      rel="stylesheet"
+    />
+    <title>Dispositivos</title>
+  </head>
+
+  <body>
+    <header>
+      <div
+        class="
+          d-flex
+          flex-column
+          align-items-center
+          p-3
+          px-md-4
+          mb-3
+          bg-white
+          border-bottom
+        "
+      >
+        <nav class="my-2 my-md-0 mr-md-3">
+          <h5 class="text-center my-0 mr-md-auto font-weight-normal">
+            <a class="p-2 text-dark" href="index.html">Dashboard</a>
+          </h5>
+        </nav>
+      </div>
+    </header>
+    <!--Tabela-->
+    <b-card>
+      <div class="d-flex justify-content-between">
+        <h4>Dispositivos</h4>
+
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control mr-sm-2"
+            placeholder="filtro"
+            v-model="filter"
+          />
+        </div>
+      </div>
+
+      <b-table
+        id="table-devices"
+        :per-page="perPage"
+        :current-page="currentPage"
+        :fields="fields"
+        :filter="filter"
+        :items="devices"
+        :small="true"
+        :hover="true"
+      >
+<!--
+      <template #cell(actions)="row">
+-->
+        <b-button
+            variant="outline-info"
+            size="sm"
+            class="mr-1"
+            @click="edit(row.item, $event.target)"
+          >
+            <i class="pe-7s-note" />
+          </b-button>
+          <b-button
+            variant="outline-danger"
+            size="sm"
+            class="mr-1"
+            @click="remove(row.item, $event.target)"
+          >
+            <i class="pe-7s-trash" />
+          </b-button>
+<!--
+</template>
+-->
+      </b-table>
+
+      <b-pagination
+        align="center"
+        aria-controls="table-devices"
+        v-model="currentPage"
+        :total-rows="rows"
+        :per-page="perPage"
+      >
+      </b-pagination>
+    </b-card>
+
+    <div>
+      <page-title :heading="heading" :subheading="subheading" :icon="icon">
+        <button
+          type="button"
+          class="btn-shadow d-inline-flex align-items-center btn btn-success"
+          @click="toggle"
+        >
+          <font-awesome-icon class="mr-2" icon="plus" />
+          Criar Novo
+        </button>
+      </page-title>
+
+      <!--Formulario-->
+      <div class="content">
+        <div v-if="create" class="main-card mb-3 card">
+          <div class="card-body">
+            <h5 class="card-title">Cadastro de Dispositivos</h5>
+            <form @submit.prevent>
+              <div class="form-row">
+                <div class="col-md-2">
+                  <div class="position-relative form-group">
+                    <label for="id">Serial</label>
+                    <input name="id" id="id" type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="position-relative form-group">
+                    <label for="model" class="">Modelo ID</label>
+                    <v-select
+                      :options="options"
+                      v-model="device.model"
+                    ></v-select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="localization" class="">Localization</label>
+                    <v-select
+                      :options="localizationList"
+                      v-model="device.localization"
+                    ></v-select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="equipment" class="">Equipamento</label>
+                    <v-select
+                      :options="equipmentList"
+                      v-model="device.equipament"
+                    ></v-select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="cReleName1">Nome do Rele 1</label>
+                    <input
+                      id="cReleName1"
+                      class="form-control"
+                      type="text"
+                      placeholder=""
+                      v-model="device.releName1"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="cReleName2">Nome do Rele 2</label>
+                    <input
+                      id="cReleName2"
+                      class="form-control"
+                      type="text"
+                      placeholder=""
+                      v-model="device.releName1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <button class="btn btn-primary" @click="save">Salvar</button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                  <button class="btn btn-warning" @click="reset">
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

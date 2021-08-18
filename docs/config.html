@@ -1,160 +1,297 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="version" content="#versao#" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.9, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title>Configuracao</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="version" content=#versao#>
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <title>#id_device#</title>
-</head>
-
-<body>
-   <header>
-    <div class="d-flex flex-column align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
-      <nav class="my-2 my-md-0 mr-md-3">
-          <h5 class="text-center my-0 mr-md-auto font-weight-normal">#id_device#</h5>
-          <a class="p-2 text-dark" href="dashboard.html">Dashboard</a>
+  <body>
+    <header>
+      <div
+        class="
+          d-flex
+          flex-column
+          align-items-center
+          p-3
+          px-md-4
+          mb-3
+        "
+      >
+        <nav class="my-2 my-md-0 mr-md-3">
+          <h5 class="text-center my-0 mr-md-auto font-weight-normal">
+            #id_device#
+          </h5>
+          <a class="p-2 text-dark" href="device.html">Dashboard</a>
           <a class="p-2 text-dark" href="info.html">Informações</a>
           <a class="p-2 text-dark" href="config.html">Configurações</a>
-          <BR><BR><h6 class="text-center">
+          <br /><br />
+          <h6 class="text-center">
             <h7>
-              <a class="btn btn-outline-primary" href="reconfig.html" onclick="return confirm('Reconfigurar módulo?')">Reconfigurar</a>
-              <a class="btn btn-outline-primary" href="reboot.html"   onclick="return confirm('Reiniciar módulo?')">Reiniciar</a>
+              <a
+                class="btn btn-outline-primary"
+                href="reconfig.html"
+                onclick="return confirm('Reconfigurar módulo?')"
+                >Reconfigurar</a
+              >
+              <a
+                class="btn btn-outline-primary"
+                href="reboot.html"
+                onclick="return confirm('Reiniciar módulo?')"
+                >Reiniciar</a
+              >
             </h7>
           </h6>
         </nav>
-    </div>
-  </header>
+      </div>
+    </header>
 
-  
-  <div class="container mt-5">
-    <div class="card-deck mb-3 text-center ">
-      <div class="card mb-4 shadow-sm  border-success">
-        <div class="card-header  border-primary">
-          <h4 class="my-0 font-weight-normal text-info">Configuração</h4>
+    <div class="container mt-5">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm border-success">
+          <div class="card-header border-primary">
+            <h4 class="my-0 font-weight-normal text-info">Configuração</h4>
+          </div>
+          <div class="card-body">
+            <form
+              name="config"
+              action="configSave"
+              method="post"
+              class="needs-validation"
+              novalidate=""
+            >
+              <div class="mb-3">
+                <label for="username">ID Esp8266</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="id_device"
+                    id="id_device"
+                    value="#id_device#"
+                    size="15"
+                    maxlength="15"
+                    placeholder=""
+                    required=""
+                  />
+                  <div class="invalid-feedback" style="width: 100%">
+                    Identificação é obrigatório.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">SSID Wi-Fi</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="WIFI_SSID"
+                    value="#WIFI_SSID#"
+                    size="20"
+                    maxlength="20"
+                  />
+                  <div class="invalid-feedback">
+                    WIFI_SSID do Wifi é obrigatório.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="pw">Senha</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="pw"
+                    value="#pw#"
+                    size="20"
+                    maxlength="20"
+                  />
+                  <div class="invalid-feedback">Senha é obrigatório.</div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="hostnameOTA">hostname OTA</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="hostnameOTA"
+                  value="#hostnameOTA#"
+                  size="20"
+                  maxlength="20"
+                />
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="sysIP"
+                  >IP <span class="text-muted">(Fixo)</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="sysIP"
+                  value="#sysIP#"
+                  size="20"
+                  maxlength="20"
+                />
+              </div>
+
+              <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="country">Rele 01</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="cRele1"
+                    value="#cRele1#"
+                    size="20"
+                    maxlength="20"
+                  />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="state">Sensor 01</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="cSensor"
+                    value="#cSensor#"
+                    size="20"
+                    maxlength="20"
+                  />
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="zip">Time Fita Led</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="iTimeMinProg"
+                    value="#iTimeMinProg#"
+                    size="2"
+                    maxlength="2"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Icone Rele1</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="sIconeRele1"
+                    value="#sIconeRele1#"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Icone Rele2</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="sIconeRele2"
+                    value="#sIconeRele2#"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Icone Sensor1</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="sIconeSensor1"
+                    value="#sIconeSensor1#"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Icone Sensor2</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="sIconeSensor2"
+                    value="#sIconeSensor2#"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Horas</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="i_horas"
+                    value="#i_horas#"
+                    size="2"
+                    maxlength="2"
+                  />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Minutos</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="i_minutos"
+                    value="#i_minutos#"
+                    size="1"
+                    maxlength="2"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="cc-name">Som Teclas:</label>
+                <input type="radio" name="somteclas" value="1" #somteclason# />
+                Ligado &nbsp;&nbsp;
+                <input type="radio" name="somteclas" value="0" #somteclasoff# />
+                Desligado
+              </div>
+
+              <div class="row justify-content-around">
+                <div class="col-md-3 mb-3 col-off-1">
+                  <button
+                    type="submit"
+                    id="save"
+                    value="Gravar"
+                    class="btn btn-outline-success btn-block"
+                    onClick="return confirm('Gravar a configuração?')"
+                  >
+                    Gravar
+                  </button>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <button
+                    type="submit"
+                    id="cancelar"
+                    value="Cancelar"
+                    class="btn btn-outline-danger btn-block"
+                    onClick="confirm('Cancelar as alterações?')"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="card-body">
-          <form name="config" action="configSave" method="post" class="needs-validation" novalidate="">
-
-          <div class="mb-3">
-            <label for="username">ID Esp8266</label>
-            <div class="input-group">
-              <input type="text" class="form-control" name="id_device" id="id_device" value="#id_device#" size="15"
-                maxlength="15" placeholder="" required="">
-              <div class="invalid-feedback" style="width: 100%;">
-                Identificação é obrigatório.
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">SSID Wi-Fi</label>
-              <input type="text" class="form-control" name="WIFI_SSID" value="#WIFI_SSID#" size="20" maxlength="20">
-              <div class="invalid-feedback">
-                WIFI_SSID do Wifi é obrigatório.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="pw">Senha</label>
-              <input type="password" class="form-control" name="pw" value="#pw#" size="20" maxlength="20">
-              <div class="invalid-feedback">
-                Senha é obrigatório.
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="hostnameOTA">hostname OTA</label>
-            <input type="text" class="form-control" name="hostnameOTA" value="#hostnameOTA#" size="20" maxlength="20">
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="sysIP">IP <span class="text-muted">(Fixo)</span></label>
-            <input type="text" class="form-control" name="sysIP" value="#sysIP#" size="20" maxlength="20">
-          </div>
-
-          <div class="row">
-            <div class="col-md-5 mb-3">
-              <label for="country">Rele 01</label>
-              <input type="text" class="form-control" name="cRele1" value="#cRele1#" size="20" maxlength="20">
-            </div>
-
-            <div class="col-md-4 mb-3">
-              <label for="state">Sensor 01</label>
-              <input type="text" class="form-control" name="cSensor" value="#cSensor#" size="20" maxlength="20">
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="zip">Time Fita Led</label>
-              <input type="text" class="form-control" name="iTimeMinProg" value="#iTimeMinProg#" size="2" maxlength="2">
-            </div>
-          </div>
-
-          <div class="row mb-3">
-            <div class="col-md-6 mb-3">
-              <label for="cc-name">Icone Rele1</label>
-              <input type="text" class="form-control" name="sIconeRele1" value="#sIconeRele1#">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="cc-number">Icone Rele2</label>
-              <input type="text" class="form-control" name="sIconeRele2" value="#sIconeRele2#">
-            </div>
-          </div>
-
-          <div class="row mb-3">
-            <div class="col-md-6 mb-3">
-              <label for="cc-name">Icone Sensor1</label>
-              <input type="text" class="form-control" name="sIconeSensor1" value="#sIconeSensor1#">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="cc-number">Icone Sensor2</label>
-              <input type="text" class="form-control" name="sIconeSensor2" value="#sIconeSensor2#">
-            </div>
-          </div>
-          
-          <div class="row mb-3">
-            <div class="col-md-6 mb-3">
-              <label for="cc-name">Horas</label>
-              <input type="text" class="form-control" name="i_horas" value="#i_horas#" size="2" maxlength="2">
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="cc-number">Minutos</label>
-              <input type="text" class="form-control" name="i_minutos" value="#i_minutos#" size="1" maxlength="2">
-            </div>
-          </div>
-
-          <div class="col-md-12 mb-3">
-            <label for="cc-name">Som Teclas:</label>
-            <input type="radio" name="somteclas"  value="1" #somteclason#>  Ligado &nbsp;&nbsp;
-            <input type="radio" name="somteclas"  value="0" #somteclasoff#> Desligado
-          </div>
-
-          <div class="row justify-content-around">
-            <div class="col-md-3 mb-3 col-off-1 ">
-              <button type="submit" id="save" value="Gravar" class="btn btn-outline-success  btn-block"
-                onClick="return confirm('Gravar a configuração?')">Gravar</button>
-            </div>
-
-            <div class="col-md-3 mb-3 ">
-              <button type="submit" id="cancelar"  value="Cancelar" class="btn btn-outline-danger btn-block"
-                onClick="confirm('Cancelar as alterações?')">Cancelar</button>
-            </div>  
-          </div>
-          </form>
-        </div>
-
       </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>
