@@ -39,8 +39,15 @@
       >
         <nav class="my-2 my-md-0 mr-md-3">
           <h5 class="text-center my-0 mr-md-auto font-weight-normal">
-            <a class="p-2 text-dark" href="index.html">Dashboard</a>
+            Casa iot
           </h5>
+          <a class="p-2 text-dark" href="index.html">Dashboard</a> |
+          <a class="p-2 text-dark" href="ListUsers.html">Usuarios</a> |
+          <a class="p-2 text-dark" href="ListDevices.html">Dispositivos</a> |
+          <!--           <a class="p-2 text-dark" href="devices.html">Dispositivos2</a>-->
+          <a class="p-2 text-dark" href="ListSensores.html">Sensores</a>
+          <!--          <a class="p-2 text-dark" href="cad_user.html">Usuarios</a> |-->
+          <!--          <a class="p-2 text-dark" href="cad_device.html">Usuarios</a> |-->
         </nav>
       </div>
     </header>
@@ -69,26 +76,26 @@
         :small="true"
         :hover="true"
       >
-<!--
+        <!--
       <template #cell(actions)="row">
 -->
         <b-button
-            variant="outline-info"
-            size="sm"
-            class="mr-1"
-            @click="edit(row.item, $event.target)"
-          >
-            <i class="pe-7s-note" />
-          </b-button>
-          <b-button
-            variant="outline-danger"
-            size="sm"
-            class="mr-1"
-            @click="remove(row.item, $event.target)"
-          >
-            <i class="pe-7s-trash" />
-          </b-button>
-<!--
+          variant="outline-info"
+          size="sm"
+          class="mr-1"
+          @click="edit(row.item, $event.target)"
+        >
+          <i class="pe-7s-note" />
+        </b-button>
+        <b-button
+          variant="outline-danger"
+          size="sm"
+          class="mr-1"
+          @click="remove(row.item, $event.target)"
+        >
+          <i class="pe-7s-trash" />
+        </b-button>
+        <!--
 </template>
 -->
       </b-table>

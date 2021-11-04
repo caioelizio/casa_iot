@@ -44,26 +44,60 @@
           border-bottom
         "
       >
-        <nav class="my-2 my-md-0 mr-md-3">
-          <h5 class="text-center my-0 mr-md-auto font-weight-normal">
-            Casa iot
-          </h5>
-          <a class="p-2 text-dark" href="index.html">Dashboard</a>
-          | <a class="p-2 text-dark" href="device.html">Dispositivos</a> |
-          <a class="p-2 text-dark" href="Sensor.html">Sensor</a>
-        </nav>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <h5 class="text-center my-0 mr-md-auto font-weight-normal">
+          Casa iot
+        </h5>
+        <a class="p-2 text-dark" href="index.html">Dashboard</a> |
+        <a class="p-2 text-dark" href="list_users.html">Usuarios</a> |
+        <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
+        <a class="p-2 text-dark" href="list_sensors.html">Sensores</a>
+<!--          <a class="p-2 text-dark" href="cad_user.html">Usuarios</a> |-->
+<!--          <a class="p-2 text-dark" href="cad_device.html">Usuarios</a> |-->
+      </nav>
       </div>
     </header>
 
     <div class="container mt-5">
+      <div class="d-flex justify-content-between p-3 px-md-4 mb-3 bg-white">
+        <div class="col-8 text-info">
+          <h4>
+            <!--<button
+              type="button"
+              class="
+                btn-shadow
+                d-inline-flex
+                align-items-center
+                btn btn-success
+              "
+              @click="toggle"
+            >
+              <font-awesome-icon class="mr-2" icon="plus" />
+              Criar Novo
+            </button>-->
+            Lista de dispositivos
+          </h4>
+        </div>
+        <!--Filtro-->
+        <div class="col-4 form-group">
+          <input
+            type="text"
+            class="form-control mr-sm-2"
+            placeholder="filtro"
+            v-model="filter"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
       <div class="card mb-3 border-primary">
         <!--azul-->
-
         <div class="card-body justify-content-center">
-          <div class="col-12 text-info">Garagem / Irrigação</div>
+          <div class="col-12 text-info">ID | Tipo | Serial</div>
             <div class="col-12">
-              <ul id="DHT11List"></ul>
-              <script src="js/database_DHT11.js"></script>
+              <ul id="devicesList"></ul>
+              <script src="js/database_device.js"></script>
             </div>
           </div>
         </div>

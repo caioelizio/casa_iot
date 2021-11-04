@@ -1,4 +1,5 @@
-// Your web app's Firebase configuration
+// Firebase configuration Your web app's
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var config = {
   apiKey: "AIzaSyBj6zwBDJWLWEr3pVNCu8FkT55tKNLd1_0"
