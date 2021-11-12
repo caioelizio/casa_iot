@@ -42,8 +42,8 @@
             Casa iot
           </h5>
           <a class="p-2 text-dark" href="index.html">Dashboard</a> |
-          <a class="p-2 text-dark" href="ListUsers.html">Usuarios</a> |
-          <a class="p-2 text-dark" href="ListDevices.html">Dispositivos</a> |
+          <a class="p-2 text-dark" href="list_users.html">Usuarios</a> |
+          <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
           <!--           <a class="p-2 text-dark" href="devices.html">Dispositivos2</a>-->
           <a class="p-2 text-dark" href="ListSensores.html">Sensores</a>
           <!--          <a class="p-2 text-dark" href="cad_user.html">Usuarios</a> |-->
@@ -141,24 +141,6 @@
                     <v-select
                       :options="options"
                       v-model="device.model"
-                    ></v-select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="position-relative form-group">
-                    <label for="localization" class="">Localization</label>
-                    <v-select
-                      :options="localizationList"
-                      v-model="device.localization"
-                    ></v-select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="position-relative form-group">
-                    <label for="equipment" class="">Equipamento</label>
-                    <v-select
-                      :options="equipmentList"
-                      v-model="device.equipament"
                     ></v-select>
                   </div>
                 </div>

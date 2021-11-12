@@ -31,6 +31,8 @@ var watch = (() => {
         item.val().permissions + '  |  ' + 
         item.val().status + '  |  ' + 
         item.val().created
+        //item.val().host + '  |  ' + 
+        //item.val().type + '  |  ' + 
         //item.val().pw + '  |  ' + 
 
         ) );
