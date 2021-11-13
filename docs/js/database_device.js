@@ -22,9 +22,10 @@ var watch = (() => {
     snapshot.forEach(item => {
       let li = document.createElement('li');
       let hr = document.createElement('hr');
+      icont++;
       li.appendChild(document.createTextNode(
 
-      item.val().icont  + '  |  ' +
+      icont  + '  |  ' +
       item.val().serial_device + '  |  ' + 
       item.val().id + '  |  ' + 
       item.val().localizacao + '  |  ' + 

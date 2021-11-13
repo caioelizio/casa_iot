@@ -24,14 +24,14 @@ var watch = (() => {
       li.appendChild(document.createTextNode(
 
         item.val().id + '  |  ' + 
-        item.val().timestamp + '  |  ' + 
         item.val().corrente + '  |  ' + 
         item.val().potencia + '  |  ' + 
-        item.val().alerta + '  |  ' + 
         item.val().consumoMesKwh + '  |  ' + 
         item.val().consumoMesKwhAnt + '  |  ' + 
         item.val().valorConsumoMes + '  |  ' + 
         item.val().valorConsumoMesAnt + '  |  ' + 
+        item.val().timestamp + '  |  ' + 
+        item.val().alerta + '  |  ' + 
         item.val().status
         
         ));
