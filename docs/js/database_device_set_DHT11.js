@@ -1,7 +1,7 @@
 // devices js
 
 var watch = (() => {
-  const devicesList_set  = document.querySelector("#devicesList_set");
+  const devicesList_set  = document.querySelector("#devicesList_set_DHT11");
 
   const create = (timestamp, status) => {
     const created = new Date().toISOString();
@@ -25,10 +25,10 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-        icont  + '  |  ' +
+      icont  + '  |  ' +
       item.val().id + '  |  ' + 
-      item.val().corrente + '  |  ' + 
-      item.val().potencia + '  |  ' + 
+      item.val().temp + '  |  ' + 
+      item.val().humid + '  |  ' + 
       item.val().rele1 + '  |  ' + 
       item.val().rele2
 
@@ -41,7 +41,10 @@ var watch = (() => {
   return {
     init: () => {
       //firebase.database().ref('devices/1483989').on('value', devicesList_setView);
-      firebase.database().ref('devices_set/').on('value', devicesList_setView);
+      //firebase.database().ref('devices_set/3359941').on('value', devicesList_setView); //print3d
+      //firebase.database().ref('devices_set/1329594').on('value', devicesList_setView); //Medidor Energia
+      //firebase.database().ref('devices_set/').on('value', devicesList_setView);
+      firebase.database().ref('devices_set/DHT11/').on('value', devicesList_setView);
     }
   }
   

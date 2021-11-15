@@ -11,10 +11,15 @@ var watch = (() => {
 
   const DHT11List1View = (snapshot) => {
     DHT11List1.innerHTML = '';
+    icont = 0;
+
     snapshot.forEach(item => {
-      let li = document.createElement('li'); //cria um elemento html
+      let li = document.createElement('li');
+      let hr = document.createElement('hr');
+      icont++;
       li.appendChild(document.createTextNode(
 
+        icont  + '  |  ' +
         //item.val().id  + '  |  '
         //+ item.val().status + '  |  '
         item.val().temp + ' | '

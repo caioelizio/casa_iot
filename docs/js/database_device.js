@@ -26,14 +26,14 @@ var watch = (() => {
       li.appendChild(document.createTextNode(
 
       icont  + '  |  ' +
-      item.val().serial_device + '  |  ' + 
+      item.val().device_serial + '  |  ' + 
       item.val().id + '  |  ' + 
       item.val().localizacao + '  |  ' + 
-      item.val().sysIP + '  |  ' + 
+      item.val().ip_sys_fixo + '  |  ' + 
       //item.val().timestamp + '  |  ' + 
       item.val().ts_active_device + '  |  ' + 
-      item.val().sVersionSis + '  |  ' + 
-      item.val().status + '  |  '
+      item.val().version_sis
+      //item.val().status + '  |  '
       //item.val().created
 
       ) );
@@ -44,8 +44,8 @@ var watch = (() => {
 
   return {
     init: () => {
-      //firebase.database().ref('devices/1483989').on('value', devicesListView);
-      firebase.database().ref('devices/').on('value', devicesListView);
+      //firebase.database().ref('/devices/3359941').on('value', devicesListView); //Print3D 
+      firebase.database().ref('devices').on('value', devicesListView);
     }
   }
   

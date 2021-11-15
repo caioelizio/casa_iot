@@ -6,12 +6,14 @@ var watch = (() => {
   const DHT11ListView = (snapshot) => {
     DHT11List.innerHTML = '';
     icont = 0;
+
     snapshot.forEach(item => {
       let li = document.createElement('li');
       let hr = document.createElement('hr');
+      icont++;
       li.appendChild(document.createTextNode(
 
-        item.val().icont  + '  |  '
+        icont  + '  |  ' +
         + item.val().id  + '  |  '
         + item.val().temp + ' | '
         + item.val().humid + '  |  '
@@ -28,7 +30,7 @@ var watch = (() => {
     init: () => {
       //firebase.database().ref('SensorDHT11/3384612').on('value', DHT11ListView); //3384612 irrigacao
       //firebase.database().ref('SensorDHT11/601897').on('value', DHT11List1View); // 601897 servidor
-      firebase.database().ref('SensorDHT11/1483989').on('value', DHT11ListView); // 1483989 print
+      firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 3359941 print
       //firebase.database().ref('SensorDHT11').on('value', DHT11ListView);
     }
   }

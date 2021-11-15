@@ -22,11 +22,15 @@ var watch = (() => {
 
   const userListView = (snapshot) => {
     userList.innerHTML = '';
+    icont = 0;
+
     snapshot.forEach(item => {
       let li = document.createElement('li');
       let hr = document.createElement('hr');
+      icont++;
       li.appendChild(document.createTextNode(
 
+        icont  + '  |  ' +
         item.val().name + '  |  ' + 
         item.val().permissions + '  |  ' + 
         item.val().status + '  |  ' + 
