@@ -1,5 +1,5 @@
-//sensor DHT11 js
-
+// sensor DHT11 js
+// list
 var watch = (() => {
   const DHT11List = document.querySelector("#DHT11List");
 
@@ -13,7 +13,7 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-        icont  + '  |  ' +
+        icont  + '  |  '
         + item.val().id  + '  |  '
         + item.val().temp + ' | '
         + item.val().humid + '  |  '
@@ -29,8 +29,8 @@ var watch = (() => {
   return {
     init: () => {
       //firebase.database().ref('SensorDHT11/3384612').on('value', DHT11ListView); //3384612 irrigacao
-      //firebase.database().ref('SensorDHT11/601897').on('value', DHT11List1View); // 601897 servidor
-      firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 3359941 print
+      firebase.database().ref('SensorDHT11/601897').on('value', DHT11ListView); // 601897 servidor
+      //firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 3359941 print
       //firebase.database().ref('SensorDHT11').on('value', DHT11ListView);
     }
   }
