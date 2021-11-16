@@ -32,7 +32,7 @@ var watch = (() => {
       + item.val().humid + ' % |  '
       + item.val().rele1 + '  |  '
       + item.val().rele2 + '  |  '
-      //item.val().ts_active_device
+      + item.val().ts_active_device
 
       ) );
       devices_set.appendChild(hr);

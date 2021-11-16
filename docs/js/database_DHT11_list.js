@@ -2,6 +2,8 @@
 // list
 var watch = (() => {
   const DHT11List = document.querySelector("#DHT11List");
+  
+  //devices_id
 
   const DHT11ListView = (snapshot) => {
     DHT11List.innerHTML = '';
@@ -28,10 +30,12 @@ var watch = (() => {
 
   return {
     init: () => {
+      //devices_id
       //firebase.database().ref('SensorDHT11/3384612').on('value', DHT11ListView); //3384612 irrigacao
-      firebase.database().ref('SensorDHT11/601897').on('value', DHT11ListView); // 601897 servidor
+      //firebase.database().ref('SensorDHT11/601897').on('value', DHT11ListView); // 601897 servidor
       //firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 3359941 print
       //firebase.database().ref('SensorDHT11').on('value', DHT11ListView);
+      firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 601897 servidor
     }
   }
   
