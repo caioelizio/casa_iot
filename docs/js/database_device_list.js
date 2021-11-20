@@ -30,7 +30,7 @@ var watch = (() => {
       item.val().id + '  |  ' + 
       item.val().localizacao + '  |  ' + 
       item.val().ip_sys_fixo + '  |  ' + 
-      //item.val().timestamp + '  |  ' + 
+      item.val().timestamp + '  |  ' + 
       item.val().ts_active_device + '  |  ' + 
       item.val().version_sis
       //item.val().status + '  |  '

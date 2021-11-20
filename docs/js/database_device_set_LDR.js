@@ -31,7 +31,8 @@ var watch = (() => {
       + item.val().value_sensor_LDR + ' |  '
       + item.val().mns_sensor_LDR + '  |  '
       + item.val().sensorLDR_status
-      //item.val().ts_active_device
+      + item.val().ts_active_device + '  |  '
+      + item.val().timestamp
 
       ) );
       devices_set.appendChild(hr);

@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Serpente</title>
+    <LINK href="Conf_HP.css" type=text/css rel=stylesheet>
+  </head>
+
+  <body bgcolor="#000000">
+    <script language="JavaScript">
+      var altura = 23;
+      var largura = 50;
+      var velocidade = 50;
+
+      var a = 0;
+      var b = 0;
+      largura += 2;
+
+      for (b = 0; b < altura + 2; b++) {
+        document.write("<img src=Fim.gif width=0 Altura=0>");
+        for (a = 0; a < largura - 2; a++) {
+          if (b == 0 || b == altura + 1) {
+            document.write("<img src=Fim.gif width=0 height=0>");
+          } else {
+            document.write("<img src=fundo.jpg width=15 height=15>");
+          }
+        }
+        document.write("<img src=Fim.gif width=0 height=0><br>");
+      }
+
+      var o = 700; //posicao do inicio da cobra
+      var x = o;
+      var n = 0;
+      var limpo = document.images[1].src;
+      var al = altura * largura;
+      var comida = 0;
+      var pontuacao = 0;
+
+      comida = Math.floor(Math.random() * al - 2);
+
+      document.images[x].src = "parte.jpg";
+
+      var minhoca = new Array();
+
+      var direcao = 0;
+      var tecla = 0;
+      document.onkeydown = teclas;
+      function teclas(DnEvents) {
+        tecla = window.event.keyCode;
+        if (tecla == 37) {
+          direcao = 1;
+        } //esquerda
+        if (tecla == 39) {
+          direcao = 2;
+        } //direita
+        if (tecla == 40) {
+          direcao = 3;
+        } //baixo
+        if (tecla == 38) {
+          direcao = 4;
+        } //cima
+      }
+
+      var comprimento = 4;
+
+      function executar() {
+        if (direcao != 0) {
+          n++;
+        } //pega a posicao do ultimo quadro da cobra
+        if (direcao == 1) {
+          x--;
+        }
+        if (direcao == 2) {
+          x++;
+        }
+        if (direcao == 3) {
+          x += largura;
+        }
+        if (direcao == 4) {
+          x -= largura;
+        }
+
+        if (document.images[x].src == document.images[largura - 1].src) {
+          velocidade -= 400;
+          x = minhoca[n - 1];
+          morreu();
+        }
+
+        minhoca[n] = x;
+
+        if (x == comida) {
+          comprimento++;
+          pontuacao = pontuacao + 10;
+
+          comida = Math.floor(Math.random() * al - 2);
+        }
+
+        if (n > comprimento) {
+          o = minhoca[n - comprimento];
+        }
+
+        document.images[o].src = "fundo.jpg"; //fundo em cima do ultimo quadro da cobra
+        document.images[x].src = "parte.jpg";
+        document.images[comida].src = "parte.jpg";
+        window.setTimeout("executar();", velocidade);
+      }
+
+      function morreu() {
+        alert("Voc� perdeu man�! e s� fez " + pontuacao + " pontos");
+
+        location.reload();
+      }
+
+      window.onload = executar;
+    </script>
+
+    <br /><br />
+    <p align="center">
+      <a href="../index.htm">Voltar</a
+      ><!--voltar-->
+    </p>
+  </body>
+</html>

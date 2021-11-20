@@ -1,7 +1,7 @@
 // devices js
 
 var watch = (() => {
-  const devicesList_set  = document.querySelector("#devicesList_set_SCT13");
+  const devicesList_set  = document.querySelector("#devices_set_SCT13");
 
   const create = (timestamp, status) => {
     const created = new Date().toISOString();
@@ -25,12 +25,12 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-      icont  + '  |  ' +
-      item.val().id + '  |  ' + 
-      item.val().corrente + '  |  ' + 
-      item.val().potencia + '  |  ' + 
-      item.val().rele1 + '  |  ' + 
-      item.val().rele2
+      icont  + '  |  '
+      + item.val().id + '  |  '
+      + item.val().corrente + '  |  '
+      + item.val().potencia + '  |  '
+      + item.val().ts_active_device + '  |  '
+      + item.val().timestamp
 
       ) );
       devicesList_set.appendChild(hr);
