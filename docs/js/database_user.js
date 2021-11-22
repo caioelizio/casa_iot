@@ -30,14 +30,14 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-        icont  + '  |  ' +
-        item.val().name + '  |  ' + 
-        item.val().permissions + '  |  ' + 
-        item.val().status + '  |  ' + 
-        item.val().created
-        //item.val().host + '  |  ' + 
-        //item.val().type + '  |  ' + 
-        //item.val().pw + '  |  ' + 
+        icont  + '  |  '
+        + item.val().name + '  |  '
+        + item.val().permissions + '  |  '
+        + item.val().status + '  |  '
+        + item.val().created
+        //+ item.val().host + '  |  '
+        //+ item.val().type + '  |  '
+        //+ item.val().pw + '  |  '
 
         ) );
       userList.appendChild(hr);

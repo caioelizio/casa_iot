@@ -26,13 +26,14 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-      icont  + '  |  ' +
-      item.val().id + '  |  '
+      icont  + '  |  ' 
+      //+ item.val().sDeviceSerial + '  |  '
+      + item.val().id + '  |  '
+      //+ item.val().sDeviceName + '  |  '
       + item.val().value_sensor_LDR + ' |  '
       + item.val().mns_sensor_LDR + '  |  '
+      + item.val().timestamp + '  |  '
       + item.val().sensorLDR_status
-      + item.val().ts_active_device + '  |  '
-      + item.val().timestamp
 
       ) );
       devices_set.appendChild(hr);

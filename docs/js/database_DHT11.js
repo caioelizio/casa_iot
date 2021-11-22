@@ -19,12 +19,13 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-        icont  + '  |  ' +
-        //item.val().id  + '  |  '
-        //+ item.val().status + '  |  '
-        item.val().temp + ' | '
-        + item.val().humid
-        //+ item.val().timestamp
+      icont  + '  |  ' 
+      //+ item.val().sDeviceSerial + '  |  '
+      + item.val().sDeviceName + '  |  '
+      + item.val().temp + ' | '
+      + item.val().humid
+      //+ item.val().timestamp + '  |  '
+      //+ item.val().status
 
         ));
       DHT11List1.appendChild(li);

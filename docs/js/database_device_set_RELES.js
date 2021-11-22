@@ -26,11 +26,11 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-      icont  + '  |  ' +
-      + item.val().id + '  |  '
+      icont  + '  |  '
+      //+ item.val().sDeviceSerial + '  |  '
+      + item.val().sDeviceName + '  |  '
       + item.val().rele1 + '  |  '
       + item.val().rele2 + '  |  '
-      + item.val().ts_active_device + '  |  '
       + item.val().timestamp
 
       ) );

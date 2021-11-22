@@ -14,7 +14,8 @@ var watch = (() => {
       li.appendChild(document.createTextNode(
 
         icont  + '  |  ' +
-        + item.val().id  + '  |  '
+        //+ item.val().sDeviceSerial + '  |  '
+        + item.val().sDeviceName + '  |  '
         + item.val().status + '  |  '
         + item.val().temp + ' | '
         + item.val().humid + '  |  '

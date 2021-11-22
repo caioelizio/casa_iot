@@ -25,16 +25,15 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-      icont  + '  |  ' +
-      item.val().device_serial + '  |  ' + 
-      item.val().id + '  |  ' + 
-      item.val().localizacao + '  |  ' + 
-      item.val().ip_sys_fixo + '  |  ' + 
-      item.val().timestamp + '  |  ' + 
-      item.val().ts_active_device + '  |  ' + 
-      item.val().version_sis
-      //item.val().status + '  |  '
-      //item.val().created
+      icont  + '  |  '
+      //+ item.val().sDeviceSerial + '  |  '
+      + item.val().sDeviceName + '  |  '
+      + item.val().sLocalizacao_device + '  |  '
+      + item.val().ip_sys_fixo + '  |  '
+      + item.val().timestamp + '  |  '
+      + item.val().ts_active_device + '  |  '
+      + item.val().sVersionSis
+      //+ item.val().status
 
       ) );
       devicesList.appendChild(hr);

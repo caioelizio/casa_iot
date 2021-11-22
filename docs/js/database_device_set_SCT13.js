@@ -26,10 +26,14 @@ var watch = (() => {
       li.appendChild(document.createTextNode(
 
       icont  + '  |  '
-      + item.val().id + '  |  '
-      + item.val().corrente + '  |  '
-      + item.val().potencia + '  |  '
-      + item.val().ts_active_device + '  |  '
+      //+ item.val().sDeviceSerial + '  |  '
+      + item.val().sDeviceName + '  |  '
+      + item.val().fCorrente + '  |  '
+      + item.val().fPotencia + '  |  '
+      + item.val().fConsumoMesKwh + '  |  '
+      + item.val().fValorConsumoMes + '  |  '
+      //+ item.val().fConsumoMesKwhAnt + '  |  '
+      //+ item.val().fValorConsumoMesAnt + '  |  '
       + item.val().timestamp
 
       ) );

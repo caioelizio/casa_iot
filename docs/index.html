@@ -60,8 +60,8 @@
 
     <div class="container mt-2">
       <div class="card mb-3 border-primary">
-        <!--azul-->
-        <div class="card-body justify-content-center">
+        <!--borda azul Sensor-->
+        <div class="card-body mt-1 justify-content-center">
           <div class="col-12 text-info">
             DHT-11 | N. | ID |
             <img
@@ -75,7 +75,7 @@
               alt=""
               width="24px"
             />
-            Umidade
+            Umidade | Data | Status
           </div>
           <div class="col-12">
             <ul id="devices_set_DHT11"></ul>
@@ -87,10 +87,11 @@
 
     <div class="container mt-2">
       <div class="card mb-3 border-primary">
-        <!--azul-->
+        <!--borda azul Sensor-->
         <div class="card-body justify-content-center">
           <div class="col-12 text-info">
-            SCT-13 | N. | ID | Corrente | Potencia
+            SCT-13 | N. | ID | Corrente | Potencia | Consumo Kwh/Mes | Valor
+            Consumo Mes | Data
           </div>
           <div class="col-12">
             <ul id="devices_set_SCT13"></ul>
@@ -102,14 +103,29 @@
 
     <div class="container mt-2">
       <div class="card mb-3 border-primary">
-        <!--azul-->
+        <!--borda azul Sensor-->
         <div class="card-body justify-content-center">
           <div class="col-12 text-info">
-            LDR | N. | ID | Valor | Mns
+            LDR | N. | ID | Valor | Mns | Data | Status
           </div>
           <div class="col-12">
             <ul id="devices_set_LDR"></ul>
             <script src="js/database_device_set_LDR.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-2">
+      <div class="card mb-3 border-primary">
+        <!--borda azul Reles-->
+        <div class="card-body justify-content-center">
+          <div class="col-12 text-info">
+            RELES | N. | ID | Rele-1 | Rele-2 | Data
+          </div>
+          <div class="col-12">
+            <ul id="devices_set_RELES"></ul>
+            <script src="js/database_device_set_RELES.js"></script>
           </div>
         </div>
       </div>

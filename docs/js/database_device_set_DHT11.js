@@ -26,12 +26,13 @@ var watch = (() => {
       icont++;
       li.appendChild(document.createTextNode(
 
-      icont  + '  |  ' +
-      item.val().id + '  |  '
+      icont  + '  |  '
+      //+ item.val().sDeviceSerial + '  |  '
+      + item.val().sDeviceName + '  |  '
       + item.val().temp + ' ºC |  '
       + item.val().humid + ' % |  '
-      + item.val().ts_active_device + '  |  '
-      + item.val().timestamp
+      + item.val().timestamp + '  |  '
+      + item.val().SensorDHT11_status   
 
       ) );
       devices_set.appendChild(hr);
