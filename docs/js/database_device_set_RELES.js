@@ -27,11 +27,12 @@ var watch = (() => {
       li.appendChild(document.createTextNode(
 
       icont  + '  |  '
-      //+ item.val().sDeviceSerial + '  |  '
-      + item.val().sDeviceName + '  |  '
+      //+ item.val().sDeviceName + '  |  '
+      + item.val().id + '  |  ' //deletar essa linha depois de atualizar 
       + item.val().rele1 + '  |  '
       + item.val().rele2 + '  |  '
-      + item.val().timestamp
+      //+ item.val().timestamp
+      + item.val().ts_active_device //deletar essa linha depois de atualizar 
 
       ) );
       devices_set.appendChild(hr);
