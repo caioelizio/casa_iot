@@ -51,7 +51,7 @@ var watch = (() => {
       if (devices_id1 == "3359941") {
         firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 3359941 sala
       } 
-      firebase.database().ref('SensorDHT11/3359941').on('value', DHT11ListView); // 3359941 sala
+      firebase.database().ref('SensorDHT11/601897').on('value', DHT11ListView); // 3359941 sala
       //devices_id
       //firebase.database().ref('SensorDHT11/3384612').on('value', DHT11ListView); //3384612 irrigacao
       //firebase.database().ref('SensorDHT11/601897').on('value', DHT11ListView); // 601897 servidor
