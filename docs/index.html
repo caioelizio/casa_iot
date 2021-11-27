@@ -1,3 +1,6 @@
+<!--
+  https://getbootstrap.com/docs/5.0/customize/color/
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -50,9 +53,9 @@
     <div class="container mt-2">
       <div class="card mb-3 border-primary">
         <!--borda azul Sensor-->
-        <div class="card-body mt-1 justify-content-center">
+        <div class="card-body mt-1 justify-content-center darken-100">
           <div class="col-12 text-info">
-            <h5>DHT-11</h5>
+            <h5>Sensor Temperatura e Umidade</h5>
             <h6>
               * N. | Dispositivo |
               <img
@@ -60,13 +63,13 @@
                 alt=""
                 width="24px"
               />
-              Temperatura |
+              |
               <img
                 src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/humd.svg"
                 alt=""
                 width="24px"
               />
-              Umidade | Data | Status
+              | Data | Status
             </h6>
           </div>
           <div class="col-12">
@@ -88,7 +91,7 @@
                 alt=""
                 width="34px"
               />
-              SCT-13
+              Medidor energia
             </h5>
             <h6>
               * N. | Dispositivo | Corrente | Potencia | Consumo Kwh/Mes | Valor
@@ -110,11 +113,34 @@
           <div class="col-12 text-info">
             <h5>
               <img
+                src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/PIR.svg"
+                alt=""
+                width="24px"
+              />
+              Sensor Movimento
+            </h5>
+            <h6>* N. | Dispositivo | Valor | Data | Status</h6>
+          </div>
+          <div class="col-12">
+            <ul id="devices_set_LDR"></ul>
+            <script src="js/database_device_set_LDR.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-2">
+      <div class="card mb-3 border-primary">
+        <!--borda azul Sensor-->
+        <div class="card-body justify-content-center">
+          <div class="col-12 text-info">
+            <h5>
+              <img
                 src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/LDR.svg"
                 alt=""
                 width="24px"
               />
-              LDR
+              Sensor Luz
             </h5>
             <h6>* N. | Dispositivo | Valor | Mns | Data | Status</h6>
           </div>
