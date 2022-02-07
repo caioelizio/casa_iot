@@ -1,6 +1,6 @@
 // devices js
 
-var watch = (() => {
+let watch = (() => {
   const devicesList_set  = document.querySelector("#devices_set_SCT13");
 
   const create = (timestamp, status) => {

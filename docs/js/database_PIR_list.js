@@ -1,6 +1,6 @@
 //sensor DHT11 js
 
-var watch = (() => {
+let watch = (() => {
   const PIRlist = document.querySelector("#PIRList");
 
   const PIRlistView = (snapshot) => {

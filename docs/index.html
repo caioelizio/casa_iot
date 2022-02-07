@@ -1,11 +1,17 @@
 <!--
-  https://getbootstrap.com/docs/5.0/customize/color/
+/******************************************************************************/
+Autor: Caio Elizio | caioelizio@gmail.com | 62 98223-9516
+Software: Site para estacao meteorologica
+Data Version: 04/02/22
+Version: v1.0"
+/******************************************************************************/
+https://getbootstrap.com/docs/5.0/customize/color/
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="version" content="#versao#" />
+    <meta name="version" content="#sVersionSis#" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=0.9, shrink-to-fit=no"
@@ -18,43 +24,57 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-h
     <!-- bootstrap4-toggle-->
     <link
       href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
       rel="stylesheet"
     />
-    <title>Casa iot</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/function.js"></script>
+    <title><script>f_titulo();</script></title>
   </head>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
-  <script src="js/app.js"></script>
-
-  <!--CABEÇALHO-->
-  <header>
-    <div class="d-flex flex-column align-items-center p-3 mb-3 border-bottom">
-      <nav class="my-2 my-md-0 mr-md-3">
-        <h4 class="text-center my-0 mr-md-auto font-weight-normal">Casa iot</h4>
-        <a class="p-2 text-dark" href="index.html">Dashboard</a> |
-        <!--<a class="p-2 text-dark" href="list_users.html">Usuarios</a> |-->
-        <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
-        <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
-        <!--          <a class="p-2 text-dark" href="cad_user.html">Usuarios</a> |-->
-        <!--          <a class="p-2 text-dark" href="cad_device.html">Usuarios</a> |-->
-      </nav>
-    </div>
-  </header>
+  <script>
+    f_serial_ini();
+  </script>
 
   <!--CORPO PAGINA-->
-  <body>
+  <body style="background: rgb(0, 0, 0); color: rgb(0, 0, 0)">
+    <!--CABEÇALHO-->
+    <header>
+      <div
+        class="d-flex flex-column align-items-center p-3 mb-3 border-bottom"
+        style="background: rgb(255, 255, 0); color: rgb(0, 0, 0)"
+      >
+        <nav class="my-2 my-md-0 mr-md-3">
+          <h4 class="text-center my-0 mr-md-auto font-weight-normal">
+            <script>
+              f_titulo();
+            </script>
+          </h4>
+        </nav>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="index.html">Dashboard</a> |
+          <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--Sensor Temperatura e Umidade-->
     <div class="container mt-2">
-      <div class="card mb-3 border-primary">
-        <!--borda azul Sensor-->
+      <div
+        class="card mb-3 border-primary"
+        style="background: rgb(255, 255, 230)"
+      >
         <div class="card-body mt-1 justify-content-center darken-100">
-          <div class="col-12 text-info">
+          <div class="col-12 text-primary">
+            <!--
+            <div class="col-12 text" style="color: rgb(223, 26, 26)">
+-->
             <h5>Sensor Temperatura e Umidade</h5>
             <h6>
               * N. | Dispositivo |
@@ -80,60 +100,14 @@ h
       </div>
     </div>
 
+    <!--Sensor Luz-->
     <div class="container mt-2">
-      <div class="card mb-3 border-primary">
-        <!--borda azul Sensor-->
+      <div
+        class="card mb-3 border-primary"
+        style="background: rgb(255, 255, 230)"
+      >
         <div class="card-body justify-content-center">
-          <div class="col-12 text-info">
-            <h5>
-              <img
-                src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/ElectricityMeter.svg"
-                alt=""
-                width="34px"
-              />
-              Medidor energia
-            </h5>
-            <h6>
-              * N. | Dispositivo | Corrente | Potencia | Consumo Kwh/Mes | Valor
-              Consumo Mes | Data
-            </h6>
-          </div>
-          <div class="col-12">
-            <ul id="devices_set_SCT13"></ul>
-            <script src="js/database_device_set_SCT13.js"></script>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mt-2">
-      <div class="card mb-3 border-primary">
-        <!--borda azul Sensor-->
-        <div class="card-body justify-content-center">
-          <div class="col-12 text-info">
-            <h5>
-              <img
-                src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/PIR.svg"
-                alt=""
-                width="24px"
-              />
-              Sensor Movimento
-            </h5>
-            <h6>* N. | Dispositivo | Valor | Data | Status</h6>
-          </div>
-          <div class="col-12">
-            <ul id="devices_set_LDR"></ul>
-            <script src="js/database_device_set_LDR.js"></script>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mt-2">
-      <div class="card mb-3 border-primary">
-        <!--borda azul Sensor-->
-        <div class="card-body justify-content-center">
-          <div class="col-12 text-info">
+          <div class="col-12 text-primary">
             <h5>
               <img
                 src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/LDR.svg"
@@ -142,216 +116,29 @@ h
               />
               Sensor Luz
             </h5>
-            <h6>* N. | Dispositivo | Valor | Mns | Data | Status</h6>
           </div>
           <div class="col-12">
             <ul id="devices_set_LDR"></ul>
+            <h6>* N. | Dispositivo | Valor | Mns | Data | Status</h6>
             <script src="js/database_device_set_LDR.js"></script>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container mt-2">
-      <div class="card mb-3 border-primary">
-        <!--borda azul Reles-->
-        <div class="card-body justify-content-center">
-          <div class="col-12 text-info">
-            <h5>
-              <img
-                src="https://raw.githubusercontent.com/caioelizio/casa_iot/master/images/rele.png"
-                alt=""
-                width="24px"
-              />
-              RELES
-            </h5>
-            <h6>* N. | Dispositivo | Rele-1 | Rele-2 | Data</h6>
-          </div>
-          <div class="col-12">
-            <ul id="devices_set_RELES"></ul>
-            <script src="js/database_device_set_RELES.js"></script>
-          </div>
-        </div>
+    <!--v-select :options="DHT111" v-model="js/database_DHT11.js"></v-select-->
+  </body>
+
+  <!--RODAPÉ-->
+  <footer class="pt-4 my-md-2 pt-md-2 border-top">
+    <div class="container mt-12">
+      <div class="col-12">
+        <small class="d-block mb-3 text-white">© 2022</small>
       </div>
     </div>
+  </footer>
 
-    <v-select :options="DHT111" v-model="js/database_DHT11.js"></v-select>
-
-    <footer class="pt-4 my-md-2 pt-md-2 border-top">
-      <div class="container mt-12">
-        <div class="col-12">
-          <small class="d-block mb-3 text-muted">© 2016-2021</small>
-        </div>
-      </div>
-    </footer>
-  </body>
+  <script>
+    f_serial_fim();
+  </script>
 </html>
-
-<!--Script-->
-<script>
-  /*library.add(faStar, faPlus);
-
-  export default {
-    components: {
-      PageTitle,
-      "font-awesome-icon": FontAwesomeIcon,
-    },
-    data: () => ({
-      heading: "Formulário do dispositivo",
-      subheading: " ",
-      icon: "pe-7s-graph text-success",
-      create: false,
-      currentPage: 1,
-      perPage: 10,
-      filter: "",
-      options: ["NodeMcu ESP-12", "ESP-01", "Wemos D1 mini"],
-      options_lc: ["Listar Localizacao"],
-      options_eq: ["Listar equipamentos"],
-
-      fields: [
-        { key: "status", label: "Status" },
-        { key: "id", label: "ID" },
-        { key: "model", label: "Model" },
-        { key: "localization", label: "Loc." },
-        { key: "equipment", label: "Equip." },
-        { key: "cReleName1", label: "Rele1" },
-        { key: "cReleName2", label: "Rele2" },
-        //{ key: 'tag', label: 'Tag' },
-        //{ key: 'timestamp', label: 'Time stamp' },
-        //{ key: 'tipo', label: 'Tipo' },
-        //{ key: 'upTime', label: 'UP Time' },
-        //{ key: 'versionSis', label: 'Version' },
-        {
-          key: "created",
-          label: "Criação",
-          formatter: (date) => {
-            return new Date(date).toLocaleDateString();
-          },
-        },
-        {
-          key: "updated",
-          label: "Alterado",
-          formatter: (date) => {
-            if (date) return new Date(date).toLocaleDateString();
-          },
-        },
-        { key: "actions", label: "Ações" },
-      ],
-
-      infoModal: {
-        id: "info-modal",
-        title: "",
-        content: "",
-      },
-
-      sensor: {
-        key: "",
-        id: "",
-        model: "",
-        localization: "",
-        equipment: "",
-        cReleName1: "",
-        cReleName2: "",
-        status: "",
-      },
-    }),
-
-    computed: {
-      ...mapState("Firebase", ["sensors"]),
-      ...mapGetters("Firebase", ["equipmentList", "localizationList"]),
-
-      rows() {
-        return this.sensors.length;
-      },
-    },
-
-    methods: {
-      ...mapActions("Firebase", [
-        "setSensors",
-        "saveSensor",
-        "removeSensor",
-        "setEquipments",
-        "setLocalizations",
-      ]),
-
-      toggle() {
-        this.create = !this.create;
-      },
-
-      formatDate(value) {
-        var date = new Date(value);
-        return date.toLocaleString();
-      },
-
-      fillForm(sensor) {
-        this.key = sensor.key;
-      },
-
-      save() {
-        this.saveSensor({
-          ...this.sensor,
-        });
-        this.reset();
-      },
-
-      edit(sensor) {
-        this.sensor = { ...sensor };
-        this.create = true;
-      },
-
-      remove(sensor) {
-        const question = {
-          title: `Excluir ${sensor.name}?`,
-          text: "Você não poderá reverter isso!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Sim, exclua!",
-        };
-
-        this.$swal.fire(question).then((result) => {
-          if (result.isConfirmed) {
-            this.removeSensor({ ...sensor });
-            this.$swal.fire(
-              "Removido!",
-              `${sensor.name} foi excluído`,
-              "success"
-            );
-          }
-        });
-      },
-
-      info(item, index, button) {
-        this.infoModal.title = `Row index: ${index}`;
-        this.infoModal.content = JSON.stringify(item, null, 2);
-        this.$root.$emit("bv::show::modal", this.infoModal.id, button);
-      },
-
-      resetInfoModal() {
-        this.infoModal.title = "";
-        this.infoModal.content = "";
-      },
-
-      reset() {
-        this.create = false;
-        this.sensor = {
-          key: "",
-          id: "",
-          model: "",
-          localization: "dddd",
-          equipment: "",
-          cReleName1: "",
-          cReleName2: "",
-          status: "",
-        };
-      },
-    },
-
-    mounted() {
-      this.setSensors({});
-      this.setEquipments({});
-      this.setLocalizations({});
-    },
-  };//*/
-</script>

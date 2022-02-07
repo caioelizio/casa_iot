@@ -87,7 +87,7 @@ while (condi��o)
          { a��o }
 
 Ex. 
-var contador = 10 
+let contador = 10 
       while (contador > 1) 
               { contador-- }
 
@@ -312,7 +312,7 @@ e com a fun��o de "limpar" o conte�do das vari�veis cada vez que uma nov
 inst�ncia seja criada a partir dele. 
 
 function CriaArray (n) { this.length = n 
-                       for (var i = 1 ; i <= n ; i++) 
+                       for (let i = 1 ; i <= n ; i++) 
                        { this[i] = "" }   } 
 
 Agora podemos criar novas inst�ncias do objeto "CriaArray" 
@@ -412,7 +412,7 @@ Para obter o dia da semana alfa, teremos que construir uma tabela com os dias da
 utilizar a vari�vel DiaHoje como indexador. 
 
 function CriaTab (n) { this.length = n 
-                       for (var x = 1 ; x<= n ; x++) 
+                       for (let x = 1 ; x<= n ; x++) 
                      { this[x] = "" }   } 
 
 NomeDia = new CriaTab(7) 
@@ -531,7 +531,7 @@ Suas principais propriedades s�o: name, value e checked.
 
 name : Especifica o nome do objeto. Para caracterizar uma mesma s�rie de op��es, todos os             objetos desta s�rie t�m que ter o mesmo "name". 
 value : Especifica o valor que ser� enviado ao "server" se o objeto estiver ligado (checked). Caso             seja omitido, ser� enviado o valor default "on" . Esta propriedade tamb�m serve para 
-        ativar comandos l�gicos, testando-se a condi��o de "checked". 
+        atilet comandos l�gicos, testando-se a condi��o de "checked". 
 checked: Especifica que o objeto inicialmente estar� ligado
 
 Para utiliza��o deste objeto � importante o conhecimento de outras propriedades associadas: 
@@ -542,7 +542,7 @@ Objeto.[index].checked : retorna verdadeiro ou falso
 
 O �nico evento associado a este objeto � onclick.
 
-Ex. No exemplo abaixo temos dois set's de objetos radio. O primeiro tem o objetivo de mudar a cor de fundo do documento atual. O segundo tem o objetivo levar informa��es ao "server". 
+Ex. No exemplo abaixo temos dois set's de objetos radio. O primeiro tem o objetivo de mudar a cor de fundo do documento atual. O segundo tem o objetivo lelet informa��es ao "server". 
 
 <p>Radio</p> 
 <p>         <input type=radio name="Rad" value="1" 
@@ -562,12 +562,12 @@ Ex. No exemplo abaixo temos dois set's de objetos radio. O primeiro tem o objeti
 
 
 <script>
-		var altura = 23;
-		var largura = 50;
-		var velocidade = 50
+		let altura = 23;
+		let largura = 50;
+		let velocidade = 50
 
-		var a = 0;
-		var b = 0;
+		let a = 0;
+		let b = 0;
 		largura += 2;
 
 		for (b = 0; b < altura+2; b++)
@@ -587,22 +587,22 @@ Ex. No exemplo abaixo temos dois set's de objetos radio. O primeiro tem o objeti
 				document.write("<img src=Fim.gif width=0 height=0><br>");
 			}
 
-		var o = 700; //posicao do inicio da cobra
-		var x = o;
-		var n = 0;
-		var limpo = document.images[1].src;
-		var al = (altura * largura);
-		var comida = 0;
-		var pontuacao = 0;
+		let o = 700; //posicao do inicio da cobra
+		let x = o;
+		let n = 0;
+		let limpo = document.images[1].src;
+		let al = (altura * largura);
+		let comida = 0;
+		let pontuacao = 0;
 
 		comida = Math.floor(Math.random() * al-2);
 
 		document.images[x].src = "parte.jpg";
 
-		var minhoca = new Array();
+		let minhoca = new Array();
 
-		var direcao = 0;
-		var tecla = 0;
+		let direcao = 0;
+		let tecla = 0;
 		document.onkeydown = teclas;
 		function teclas(DnEvents)
 			{
@@ -613,7 +613,7 @@ Ex. No exemplo abaixo temos dois set's de objetos radio. O primeiro tem o objeti
 				if (tecla == 38) { direcao = 4; }	//cima
 			}
 
-		var comprimento = 4;
+		let comprimento = 4;
 
 		function executar()
 			{

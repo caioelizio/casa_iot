@@ -1,6 +1,6 @@
 //sensor SCT13 js
 
-var watch = (() => {
+let watch = (() => {
   const releList = document.querySelector("#releList");
 
   const create = (timestamp, status) => {

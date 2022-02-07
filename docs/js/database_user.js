@@ -1,6 +1,6 @@
 // user js
 
-var watch = (() => {
+let watch = (() => {
   const userList  = document.querySelector("#userList");
   const nameInput = document.querySelector("#nameInput");
   const ageInput = document.querySelector("#ageInput");

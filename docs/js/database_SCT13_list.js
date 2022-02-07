@@ -1,6 +1,6 @@
 //sensor SCT13 js
 
-var watch = (() => {
+let watch = (() => {
   const SCT13List = document.querySelector("#SCT13List");
 
   const create = (timestamp, status) => {

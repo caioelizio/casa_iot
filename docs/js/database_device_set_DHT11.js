@@ -1,7 +1,7 @@
 // sensor DHT11 js
 // SET
 
-var watch = (() => {
+let watch = (() => {
   const devices_set  = document.querySelector("#devices_set_DHT11");
 
   const create = (timestamp, status) => {
