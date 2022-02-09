@@ -1,6 +1,6 @@
 // devices js
 
-var watch = (() => {
+let watch = (() => {
   const devicesList_set  = document.querySelector("#devices_set_SCT13");
 
   const create = (timestamp, status) => {
@@ -8,7 +8,7 @@ var watch = (() => {
     const data = {
       //timestamp, status 
     }
-    return firebase.database().ref().child('users').push(data);
+    return firebase.database().ref().child('SCT').push(data); 
   };
 
   const resetForm = () => {
@@ -48,6 +48,7 @@ var watch = (() => {
       //firebase.database().ref('devices_set/3359941').on('value', devicesList_setView); //print3d
       //firebase.database().ref('devices_set/1329594').on('value', devicesList_setView); //Medidor Energia
       //firebase.database().ref('devices_set/').on('value', devicesList_setView);
+//      firebase.database().ref('devices_set/SCT13/').on('value', devicesList_setView);
       firebase.database().ref('devices_set/SCT13/').on('value', devicesList_setView);
     }
   }

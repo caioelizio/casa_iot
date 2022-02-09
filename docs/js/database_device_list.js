@@ -1,6 +1,6 @@
 // devices js
 
-var watch = (() => {
+let watch = (() => {
   const devicesList  = document.querySelector("#devicesList");
 
   const create = (timestamp, status) => {

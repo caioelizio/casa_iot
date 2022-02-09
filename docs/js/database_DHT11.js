@@ -1,6 +1,6 @@
 // sensor DHT11 js
 
-var watch = (() => {
+let watch = (() => {
   const DHT11List1 = document.querySelector("#DHT11List1");
   const DHT11List2 = document.querySelector("#DHT11List2");
   const idInput = document.querySelector("#idInput");

@@ -1,7 +1,7 @@
 // sensor LDR js
 // SET
 
-var watch = (() => {
+let watch = (() => {
   const devices_set  = document.querySelector("#devices_set_LDR");
 
   const create = (timestamp, status) => {
