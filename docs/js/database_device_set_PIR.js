@@ -1,22 +1,22 @@
-// sensor LDR | js | SET
+// sensor PIR | js | SET
 
-let watch_LDR = (() => {
-  const devices_set_LDR  = document.querySelector("#devices_set_LDR");
+let watch_PIR = (() => {
+  const devices_set_PIR  = document.querySelector("#devices_set_PIR");
 
   const create = (timestamp, status) => {
     const created = new Date().toISOString();
     const data = {
       //timestamp, status 
     }
-    return firebase.database().ref().child('LDR').push(data);
+    return firebase.database().ref().child('PIR').push(data);
   };
 
   const resetForm = () => {
     //timestampInput.value = '';
   }
 
-  const devices_setView_LDR = (snapshot) => {
-    devices_set_LDR.innerHTML = '';
+  const devices_setView_PIR = (snapshot) => {
+    devices_set_PIR.innerHTML = '';
     icont = 0;
     snapshot.forEach(item => {
       let li = document.createElement('li');
@@ -27,22 +27,22 @@ let watch_LDR = (() => {
       //+ item.val().sDeviceSerial + '  |  '
       + item.val().id + '  |  '
       //+ item.val().sDeviceName + '  |  '
-      + item.val().value_sensor_LDR + ' |  '
-      + item.val().mns_sensor_LDR + '  |  '
+      + item.val().value_sensor_PIR + ' |  '
+      + item.val().mns_sensor_PIR + '  |  '
       + item.val().timestamp + '  |  '
-      + item.val().sensorLDR_status
+      + item.val().sensorPIR_status
       ) );
-      devices_set_LDR.appendChild(hr);
-      devices_set_LDR.appendChild(li);
+      devices_set_PIR.appendChild(hr);
+      devices_set_PIR.appendChild(li);
     });
   }
 
   return {
     init: () => {
-      firebase.database().ref('devices_set/LDR/').on('value', devices_setView_LDR);
+      firebase.database().ref('devices_set/PIR/').on('value', devices_setView_PIR);
     }
   }
   
 })();
 
-watch_LDR.init();
+watch_PIR.init();
