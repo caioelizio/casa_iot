@@ -4,6 +4,9 @@ Autor: Caio Elizio | caioelizio@gmail.com | 62 98223-9516
 Software: Casa iot
 Data Version: 28/11/21
 Version: v1.2"
+Software: Site para estacao meteorologica
+Data Version: 04/02/22
+Version: v1.0"
 /******************************************************************************/
 https://getbootstrap.com/docs/5.0/customize/color/
 -->
@@ -36,6 +39,7 @@ https://getbootstrap.com/docs/5.0/customize/color/
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
     <script src="js/app.js"></script>
     <script src="js/function.js"></script>
+
     <!--title><script>f_titulo();</script></title> erro-->
     <title>Casa_iot</title>
   </head>
@@ -46,23 +50,23 @@ https://getbootstrap.com/docs/5.0/customize/color/
   <!--CORPO PAGINA-->
   <body style="background: rgba(22, 64, 143, 0.781); color: rgb(0, 0, 0)">
     <!--CABEÇALHO-->
-    <header>
-      <div
-        class="d-flex flex-column align-items-center p-3 mb-3 border-bottom"
-        style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)"
-      >
-        <nav class="my-2 my-md-0 mr-md-3">
-          <h4 class="text-center my-0 mr-md-auto font-weight-normal">
-            <script>
-              f_titulo();
-            </script>
-          </h4>
-          <a class="p-2 text-dark" href="index.html">Dashboard</a> |
-          <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
-          <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
-        </nav>
-      </div>
-    </header>
+  <!--CABEÇALHO-->
+  <header>
+    <div
+      class="d-flex flex-column align-items-center p-3 mb-3 border-bottom"
+      style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)"
+    >
+      <nav class="my-2 my-md-0 mr-md-3">
+        <h4 class="text-center my-0 mr-md-auto font-weight-normal"><script>f_titulo();</script></h4>
+        <a class="p-2 text-dark" href="index.html">Dashboard</a> |
+
+        <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
+
+        <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
+      </nav>
+    </div>
+  </header>
+
     <!--
 	<frameset rows="12%, *" noresize border="0">
     <frame  src="topo.html">
@@ -79,6 +83,9 @@ https://getbootstrap.com/docs/5.0/customize/color/
       >
         <div class="card-body mt-1 justify-content-center darken-100">
           <div class="col-12 text-primary">
+<!--
+            <div class="col-12 text" style="color: rgb(223, 26, 26)">
+-->
             <h5>Sensor Temperatura e Umidade</h5>
             <h6>
               * N. | Dispositivo |
@@ -103,6 +110,7 @@ https://getbootstrap.com/docs/5.0/customize/color/
         </div>
       </div>
     </div>
+
 
     <!--Medidor energia-->
     <div class="container mt-2">
@@ -177,17 +185,18 @@ https://getbootstrap.com/docs/5.0/customize/color/
               />
               Sensor Luz
             </h5>
-            <h6>* N. | Dispositivo | Valor | Mns | Data | Status</h6>
           </div>
           <div class="col-12">
             <!--
             -->
             <ul id="devices_set_LDR"></ul>
+            <h6>* N. | Dispositivo | Valor | Mns | Data | Status</h6>
             <script src="js/database_device_set_LDR.js"></script>
           </div>
         </div>
       </div>
     </div>
+
 
     <!--Reles-->
     <div class="container mt-2">
@@ -214,8 +223,19 @@ https://getbootstrap.com/docs/5.0/customize/color/
             <script src="js/database_device_set_RELES.js"></script>
           </div>
         </div>
+
+    <!--v-select :options="DHT111" v-model="js/database_DHT11.js"></v-select-->
+  </body>
+
+  <!--RODAPÉ-->
+  <footer class="pt-4 my-md-2 pt-md-2 border-top">
+    <div class="container mt-12">
+      <div class="col-12">
+        <small class="d-block mb-3 text-white">© 2022</small>
       </div>
     </div>
+  </footer>
+
 
     <!--v-select :options="DHT111" v-model="js/database_DHT11.js"></v-select-->
   </body>
@@ -228,6 +248,7 @@ https://getbootstrap.com/docs/5.0/customize/color/
       </div>
     </div>
   </footer>
+
 
   <script>
     f_serial_fim();

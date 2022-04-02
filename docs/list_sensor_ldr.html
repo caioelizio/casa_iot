@@ -1,5 +1,6 @@
-<!--Lista dados dos dispositivos-->
-<!DOCTYPE html> 
+<!--Lista dados dos sensores-->
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="version" content="#sVersionSis#" />
@@ -30,72 +31,59 @@
     <title><script>f_titulo();</script></title>
   </head>
 
-  <!--CABEÇALHO-->
-  <header>
-    <div
-      class="d-flex flex-column align-items-center p-3 mb-3 border-bottom"
-      style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)"
-    >
-      <nav class="my-2 my-md-0 mr-md-3">
-        <h4 class="text-center my-0 mr-md-auto font-weight-normal"><script>f_titulo();</script></h4>
-        <a class="p-2 text-dark" href="index.html">Dashboard</a> |
-
-        <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
-
-        <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
-      </nav>
-    </div>
-  </header>
-
-  <script>f_serial_ini();</script>
+    <!--CABEÇALHO-->
+    <header>
+      <div
+        class="d-flex flex-column align-items-center p-3 mb-3 border-bottom"
+        style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)" 
+      >
+        <nav class="my-2 my-md-0 mr-md-3">
+          <h4 class="text-center my-0 mr-md-auto font-weight-normal"><script>f_titulo();</script></h4>
+          <a class="p-2 text-dark" href="index.html">Dashboard</a> |
   
+          <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
+  
+          <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
+        </nav>
+      </div>
+    </header>
+  
+    <script>f_serial_ini();</script>
+    
   <!--CORPO PAGINA-->
   <body style="background: rgba(22, 64, 143, 0.781); color: rgb(0, 0, 0)">
+    <header>
+      <div
+        class="d-flex flex-column align-items-center p-3 mb-3 border-bottom"
+        style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)"
+      >
 
-    <div class="container mt-2">
-      <div class="d-flex justify-content-between p-3 px-md-4 mb-3"
-      style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)">
-        <div class="col-8 text-primary">
-          <h4>
-            <!--<button
-              type="button"
-              class="
-                btn-shadow
-                d-inline-flex
-                align-items-center
-                btn btn-success
-              "
-              @click="toggle"
-            >
-              <font-awesome-icon class="mr-2" icon="plus" />
-              Criar Novo
-            </button>-->
-            Lista de dispositivos
-          </h4>
-        </div>
-        <!--Filtro-->
-        <div class="col-4 form-group">
-          <input
-            type="text"
-            class="form-control mr-sm-2"
-            placeholder="filtro"
-            v-model="filter"
-          />
-        </div>
+
+      <nav class="my-2 my-md-0 mr-md-3">
+          <h4 class="text-center my-0 mr-md-auto font-weight-normal"><script>f_titulo();</script></h4>
+        </nav>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="index.html">Dashboard</a> |
+          <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
+        </nav>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="list_sensor_dht11.html">DHT-11</a> |
+          <a class="p-2 text-dark" href="list_sensor_ldr.html">LDR</a>
+        </nav>
       </div>
-    </div>
+    </header>
 
     <div class="container mt-2">
-      <div class="card mb-3 border-primary">
+      <div class="card mb-2 border-primary" style="background: rgb(255, 255, 230)">
         <!--azul-->
-        <div class="card-body justify-content-center"
-        style="background: rgb(160, 200, 250); color: rgb(0, 0, 0)">
-          <div class="col-12 text-primary">
-          <h5>* N. | ID | localizacao | IP-fixo | tempo ativo | version</h5>
-          </div>
-            <div class="col-12">
-              <ul id="devicesList"></ul>
-              <script src="js/database_device_list.js"></script>
+        <div class="card-body justify-content-center">
+          <h4>
+            Sensor LDR | Luminosidade
+          </h4>
+          <div class="col-12 text-info">N. | ID | Status | ttl_movimento | timestamp</div>          
+          <div class="col-12">
+              <ul id="DHT11List"></ul>
+              <script src="js/database_LDR_list.js"></script>
             </div>
           </div>
         </div>
@@ -119,12 +107,8 @@
   <footer class="pt-4 my-md-2 pt-md-2 border-top">
     <div class="container mt-12">
       <div class="col-12">
-        <small class="d-block mb-3 text-info ">© 2016-2021</small>
+        <small class="d-block mb-3 text-white">© 2022</small>
       </div>
     </div>
-  </footer>
-
-  <script>
-    f_serial_fim();
-  </script>
+  </footer>  
 </html>
