@@ -1,7 +1,12 @@
 // sensor SCT-13 | js | SET
 
+<<<<<<< HEAD
 let watch_SCT13 = (() => {
   const devicesList_set_SCT = document.querySelector("#devices_set_SCT13");
+=======
+let watch = (() => {
+  const devicesList_set  = document.querySelector("#devices_set_SCT13");
+>>>>>>> 335842e133c168bfd0ae5fc1202f06950ace8547
 
   const create = (timestamp, status) => {
     const created = new Date().toISOString();

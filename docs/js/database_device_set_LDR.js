@@ -1,7 +1,12 @@
 // sensor LDR | js | SET
 
+<<<<<<< HEAD
 let watch_LDR = (() => {
   const devices_set_LDR  = document.querySelector("#devices_set_LDR");
+=======
+let watch = (() => {
+  const devices_set  = document.querySelector("#devices_set_LDR");
+>>>>>>> 335842e133c168bfd0ae5fc1202f06950ace8547
 
   const create = (timestamp, status) => {
     const created = new Date().toISOString();

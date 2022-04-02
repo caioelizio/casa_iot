@@ -3,7 +3,11 @@
 // Variavel--------------------------------------------------------------------/
 // list
 let ttlRegistros = 0;
+<<<<<<< HEAD
 let titulo = "Casa iot"; 
+=======
+let titulo = "Estação Meteorológica"; 
+>>>>>>> 335842e133c168bfd0ae5fc1202f06950ace8547
 
 let f_serial_ini = function(){
   //console.log( "---------------");
