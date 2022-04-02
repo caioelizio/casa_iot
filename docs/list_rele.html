@@ -1,4 +1,4 @@
-<!--Lista dados dos sensores-->
+<!--Lista dados dos reles-->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -30,6 +30,7 @@
     <script src="js/function.js"></script>
     <title><script>f_titulo();</script></title>
   </head>
+  <script>f_serial_ini();</script>
 
   <!--CORPO PAGINA-->
   <body style="background: rgba(22, 64, 143, 0.781); color: rgb(0, 0, 0)">
@@ -44,6 +45,22 @@
           <a class="p-2 text-dark" href="list_devices.html">Dispositivos</a> |
           <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
         </nav>
+
+  <body>
+    <header>
+      <div class="d-flex flex-column align-items-center p-3
+          px-md-4 mb-3 bg-white border-bottom">
+          <nav class="my-2 my-md-0 mr-md-3">
+            <h4 class="text-center my-0 mr-md-auto font-weight-normal">
+              <script>
+                f_titulo();
+              </script>
+            </h4>
+            <a class="p-2 text-dark" href="index.html">Dashboard</a> |
+            <a class="p-2 text-dark" href="list_sensor_dht11.html">Sensores</a>
+          </nav>
+      </div>
+      <div class="d-flex flex-column align-items-center px-md-2 bg-white">
         <nav class="my-2 my-md-0 mr-md-3">
           <a class="p-2 text-dark" href="list_rele.html">RELE</a> |
           <a class="p-2 text-dark" href="list_sensor_dht11.html">DHT-11</a> |
