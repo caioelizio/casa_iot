@@ -41,10 +41,6 @@ let watch_RELES = (() => {
 
   return {
     init: () => {
-      //firebase.database().ref('devices/1483989').on('value', devices_setView);
-      //firebase.database().ref('devices_set/3359941').on('value', devices_setView); //print3d
-      //firebase.database().ref('devices_set/1329594').on('value', devices_setView); //Medidor Energia
-      //firebase.database().ref('devices_set/').on('value', devices_setView);
       firebase.database().ref('devices_set/RELES/').on('value', devices_setView_RELES);
     }
   }
